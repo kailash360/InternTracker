@@ -1,4 +1,4 @@
-import psycopg2,bcrypt
+import psycopg2,bcrypt,os
 from connection import Database
 # from Logger.logger import db_logger
 from flask import Flask,request
@@ -70,4 +70,4 @@ def login():
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=33507)
+    app.run(debug=True,port=int(os.getenv('PORT')))
