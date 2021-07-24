@@ -1,5 +1,5 @@
 import psycopg2,bcrypt,json,os
-from Database.connection import Database
+from connection import Database
 # from Logger.logger import db_logger
 from flask import Flask,request
 from flask_restful import Resource, Api, reqparse
