@@ -3,6 +3,7 @@ import time
 import os
 import threading
 import sys
+from Routes.internship import app
 
 # Gets the number of cores present in system
 cpus = os.cpu_count()
@@ -22,17 +23,21 @@ def internships_api() :
     print(os.path.dirname(os.path.abspath(__file__)))
     path = os.path.dirname(os.path.abspath(__file__))
     if (os.name == "nt") :
-        os.system("python ./Routes/internships.py")
+        # os.system("python ./Routes/internships.py")
+        pass
     else :
-        os.system(f"""python3 {path}/Routes/internships.py""") 
+        # os.system(f"""python3 {path}/Routes/internships.py""") 
+        app.run(debug=True)
 
 def auth_api() :
 
     path = os.path.dirname(os.path.abspath(__file__))
     if (os.name == "nt") :
-        os.system("python ./Routes/auth.py")
+        # os.system("python ./Routes/auth.py")
+        pass
     else :
-        os.system(f"python3 {path}/Routes/auth.py")
+        # os.system(f"python3 {path}/Routes/auth.py")
+        pass
 
 # Scheduler has been set to run everyday at 0000 hrs
 schedule.every().day.do(run)
