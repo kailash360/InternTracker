@@ -3,7 +3,7 @@ import time
 import os
 import threading
 import sys
-from Routes.internship import app
+from Routes.internships import app
 
 # Gets the number of cores present in system
 cpus = os.cpu_count()
