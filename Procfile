@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath InternTracker main.process
+web: gunicorn --pythonpath InternTracker scheduler
