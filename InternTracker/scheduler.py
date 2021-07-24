@@ -12,7 +12,7 @@ def run() :
     if (os.name == "nt") :
         os.system("python ./new_main.py")
     else :
-        os.system("python3 ./new_main.py") 
+        os.system("python3 new_main.py") 
 
 # Runs the internship API endpoint
 def internships_api() :
@@ -20,14 +20,14 @@ def internships_api() :
     if (os.name == "nt") :
         os.system("python ./Routes/internships.py")
     else :
-        os.system("python3 ./Routes/internships.py") 
+        os.system("python3 Routes/internships.py") 
 
 def auth_api() :
 
     if (os.name == "nt") :
         os.system("python ./Routes/auth.py")
     else :
-        os.system("python3 ./Routes/auth.py")
+        os.system("python3 Routes/auth.py")
 
 # Scheduler has been set to run everyday at 0000 hrs
 schedule.every().day.do(run)
