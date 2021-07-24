@@ -19,10 +19,11 @@ def run() :
 def internships_api() :
 
     print(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.dirname(os.path.abspath(__file__))
     if (os.name == "nt") :
         os.system("python ./Routes/internships.py")
     else :
-        os.system("python3 /Routes/internships.py") 
+        os.system(f"""python3 {path}/Routes/internships.py""") 
 
 def auth_api() :
 
