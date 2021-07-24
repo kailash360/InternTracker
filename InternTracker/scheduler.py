@@ -9,11 +9,12 @@ cpus = os.cpu_count()
 
 def run() :
 
+    path = os.path.dirname(os.path.abspath(__file__))
     # Runs program based on host os
     if (os.name == "nt") :
         os.system("python ./new_main.py")
     else :
-        os.system("python3 /new_main.py") 
+        os.system(f"python3 {path}/new_main.py") 
 
 # Runs the internship API endpoint
 def internships_api() :
@@ -27,10 +28,11 @@ def internships_api() :
 
 def auth_api() :
 
+    path = os.path.dirname(os.path.abspath(__file__))
     if (os.name == "nt") :
         os.system("python ./Routes/auth.py")
     else :
-        os.system("python3 /Routes/auth.py")
+        os.system(f"python3 {path}/Routes/auth.py")
 
 # Scheduler has been set to run everyday at 0000 hrs
 schedule.every().day.do(run)

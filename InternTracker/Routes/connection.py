@@ -2,6 +2,7 @@
 
 import psycopg2
 import json
+import os
 # from Logger.logger import db_logger
 
 class Database:
@@ -15,14 +16,20 @@ class Database:
         #     # db_logger.error('Credentials file cannot be opened')
         #     print("CREDENTIALS NOT FOUND")
 
-        self.__dbname = "intern_tracker" #str(credentials_dict["dbname"])
-        self.__user = "postgres" #str(credentials_dict["user"])
-        self.__password = "root" #str(credentials_dict["password"])
-        self.__host = "127.0.0.1" #str(credentials_dict["host"])
+        # self.__dbname = "intern_tracker" #str(credentials_dict["dbname"])
+        # self.__user = "postgres" #str(credentials_dict["user"])
+        # self.__password = "root" #str(credentials_dict["password"])
+        # self.__host = "127.0.0.1" #str(credentials_dict["host"])
+
+        self.__dbname = str(os.getenv('DB_NAME'))
+        self.__user = str(os.getenv('DB_USER'))
+        self.__password = str(os.getenv('DB_PASSWORD'))
+        self.__host = str(os.getenv('DB_HOST'))
 
     def connect(self):
         try:
             connection = psycopg2.connect(dbname = str(self.__dbname), user = str(self.__user), password = str(self.__password), host = str(self.__host))
+            print("CONNECTION establisheds")
             return connection
         except:
             # db_logger.error("Connecting database failed")
