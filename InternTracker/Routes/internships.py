@@ -71,4 +71,4 @@ def about_internship(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=int(os.getenv('PORT')))
+    app.run(debug=True)
