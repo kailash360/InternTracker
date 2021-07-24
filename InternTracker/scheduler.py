@@ -27,7 +27,7 @@ def internships_api() :
         pass
     else :
         # os.system(f"""python3 {path}/Routes/internships.py""") 
-        app.run(debug=True)
+        app.run(debug=False)
 
 def auth_api() :
 
@@ -42,7 +42,7 @@ def auth_api() :
 # Scheduler has been set to run everyday at 0000 hrs
 schedule.every().day.do(run)
 
-thread1 = threading.Thread(target = app.run)
+thread1 = threading.Thread(target = internships_api)
 thread1.start()
 thread2 = threading.Thread(target = auth_api)
 thread2.start()
