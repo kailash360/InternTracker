@@ -27,7 +27,7 @@ def internships_api() :
         pass
     else :
         # os.system(f"""python3 {path}/Routes/internships.py""") 
-        app.run(debug=False)
+        app.run(debug=False,port=80)
 
 def auth_api() :
 
